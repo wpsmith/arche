@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * Add footer scripts when another SEO plugin is active.
+ * Functions.
  *
  * @category   Genesis_Sandbox
  * @package    Functions
@@ -355,8 +355,8 @@ function gs_column_class( $i ) {
  */
 function gs_init_pretty_photo( $args = array() ) { ?>
 <script type="text/javascript" charset="utf-8">
-  jQuery(document).ready(function($){
-    $("a[href$='.jpg'], a[href$='.gif'], a[href$='.png']").prettyPhoto();
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
   });
 </script>
 <?php
