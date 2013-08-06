@@ -1,0 +1,172 @@
+.genesis-nav-menu {
+	clear: both;
+	overflow: hidden;
+}
+
+#header .genesis-nav-menu {
+	float: right;
+	margin-top: 48px;
+	@include rem(margin-top, 48);
+	width: auto;
+}
+
+
+#nav {
+	background-color: $color-extra;
+}
+
+.genesis-nav-menu.menu-primary {
+
+	a {
+		color: $light;
+			&:hover { color: $color-cta; }
+	}
+
+	.sub-menu {
+        background:$color-extra; 
+
+        a {     
+	        border:1px solid tint($color-extra, 30%);
+	        margin-right: 0;
+        	width: 200px; 
+	    }
+
+	    :first-child {
+			border-top: none;
+	    }
+
+
+    }
+
+    li ul a {
+        background: none;
+        margin-right: 0;
+        width: 200px;        
+    }
+
+}
+
+.genesis-nav-menu.menu-secondary {
+
+	a {
+	color:$dark;
+		&:hover {color: $color-cta; }
+	}
+
+	.sub-menu {
+        background:$light;
+
+        a {
+			border:1px solid #ccc;
+			width: 200px;
+        }
+        :first-child {
+			border-top: none;
+	    }
+	}
+}
+
+.genesis-nav-menu {
+	
+	.menu-item {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+
+		&:hover {
+			position:static;
+
+			> .sub-menu {
+				left: auto;
+				opacity: 1;
+				font-size:14px;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		padding: 24px 20px;
+		padding: cr(24) cr(20);
+		position: relative;
+	}
+
+	.sub-menu {
+		left: -9999px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		position: absolute;
+		@include transition(opacity 0.4s ease-in-out); 
+		width: 200px;
+		z-index: 99;
+		
+		.sub-menu {
+			margin: -68px 0 0 199px;
+		}
+	}
+
+}
+
+
+
+
+/*  Primary Navigation Extras */
+
+	.genesis-nav-menu li.right {
+		float: right;
+		padding: 24px 20px;
+		padding: cr(24) cr(20);
+		list-style-type: none;
+	}
+
+	.genesis-nav-menu li.right a {
+		display: inline;
+		padding: 0;
+	}
+
+	.genesis-nav-menu li.search {
+		padding: 6px 0 0;
+		padding: cr(6) 0 0;
+	}
+
+	.genesis-nav-menu li.rss a {
+		background: url(images/rss.png) no-repeat center left;
+		margin-left: 20px;
+		@include rem(margin-left, 20);
+		padding-left: 20px;
+		@include rem(padding-left, 20);
+	}
+
+	.genesis-nav-menu li.twitter a {
+		background: url(images/twitter-nav.png) no-repeat center left;
+		padding-left: 24px;
+		@include rem(padding-left, 24);
+	}
+
+
+/* Pagination */ 
+
+	.navigation li {
+		display: inline;
+	}
+
+	.navigation li a,
+	.navigation li a:hover,
+	.navigation li.active a,
+	.navigation li.disabled {
+		background-color: tint($dark, 30%);
+		border-radius: 3px;
+		cursor: pointer;
+		padding: 12px;
+		@include rem(padding, 12);
+		color:$light;
+	}
+
+	.navigation li a:hover,
+	.navigation li.active a {
+		background-color: $light;
+		color:$dark;
+	}
+
